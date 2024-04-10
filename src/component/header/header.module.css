@@ -1,0 +1,19 @@
+.wrapper {
+   background-color: var(--color-primary-0); 
+   padding: var(--spacing-2) 0;
+}
+
+.content { 
+   max-width: var(--max-width);
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   margin: auto;
+}
+
+.list {
+   list-style-type: none;
+   display: flex;
+   gap: var(--spacing-2);
+   align-items: center;
+}
