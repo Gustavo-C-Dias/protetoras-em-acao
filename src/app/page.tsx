@@ -1,95 +1,138 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import React from 'react';
+import Header from "@/component/header/header";
+import Carrousel from "@/component/carrousel/carrousel";
+import style from "../style/page.module.css"
+import Button from "@/component/button/button";
+import Footer from "@/component/footer/footer";
+import Card from "@/component/card/card";
+import ContentAdocao from '@/component/card/content/contentAdoca';
+
+import { NunitoFont } from "@/font/font";
 
 export default function Home() {
+
+  const info = [
+    {
+      value: '+100',
+      description: 'Animais adotados'
+    },
+    {
+      value: '42',
+      description: 'Animais resgatados'
+    },
+    {
+      value: '23',
+      description: 'Campanhas de arrecadação'
+    },
+  ]
+
+  const cards = [
+    {
+      nane: 'Jujuba',
+      age: '2 anos',
+      type: 'Cachorro',
+      vaccine: 'Vacinado',
+      image: './dog/jujuba_1.png',
+    },
+    {
+      nane: 'Jujuba',
+      age: '2 anos',
+      type: 'Cachorro',
+      vaccine: 'Vacinado',
+      image: './dog/petisco_1.png',
+    },
+    {
+      nane: 'Jujuba',
+      age: '2 anos',
+      type: 'Cachorro',
+      vaccine: 'Vacinado',
+      image: './dog/jujuba_1.png',
+    },
+    {
+      nane: 'Jujuba',
+      age: '2 anos',
+      type: 'Cachorro',
+      vaccine: 'Vacinado',
+      image: './dog/petisco_1.png',
+    },
+    {
+      nane: 'Jujuba',
+      age: '2 anos',
+      type: 'Cachorro',
+      vaccine: 'Vacinado',
+      image: './dog/jujuba_1.png',
+    }
+  ]
+
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main>
+
+      <Header />
+
+      <section className={style.section_carrousel}>
+        <Carrousel />
+      </section>
+
+      <section className={style.section_adocao}>
+        <div className={style.content_adocao}>
+          <h2 className={style.title}>Adote um bichinho</h2>
+          <div className={style.cards_adocao}>
+            {cards.map((item, index) => (
+              <Card key={index}>
+                <div>
+                  <div className={style.card_image_adocao_content}>
+                    <img src={item.image} className={style.card_image_adocao}/>
+                  </div>
+                  <div className={`${style.content_card} ${NunitoFont.className}`}>
+                    <ContentAdocao name={item.nane} age={item.age} vaccine={item.vaccine} type={item.type}/>
+                    <Button label="Entrar em contato" variant="secondary" type="a" size="small"/>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
+      <section className={style.section_ajuda}>
+        <div className={style.content_ajuda}>
+          <h2 className={style.title_primary}>Realize uma ajuda</h2>
+          <p className={`${style.description} ${NunitoFont.className}`}>
+            As contribuições podem ser feitas de várias formas relacionadas
+            a campanhas específicas nos links abaixo, ou através de uma doação
+            para apoiar a causa de forma geral. Seja qual for a sua escolha,
+            seu apoio fará toda a diferença.
           </p>
-        </a>
-      </div>
+          <div className={style.cnpj}> 
+            <p className={style.subtitle}>CNPJ: 42.880.314/0001-76</p>
+            <Button label="Copiar chave PIX" variant="primary" type="button" size="medium"/>
+          </div>
+        </div>
+      </section>
+
+      <section className={style.section_sobre}>
+        <div className={style.content_sobre}>
+          <h2 className={style.title}>Sobre nosso projeto</h2>
+          <p className={`${style.description} ${NunitoFont.className}`}>
+            As <b>Protetoras em Ação</b> dedica-se há mais de 5 anos à proteção,
+            assistência e adoção de animais na região de Itapema, contribuindo para
+            melhorar a vida dos nossos queridos bichinhos.
+          </p>
+          <div className={style.date_about}>
+            {info.map((item, index) => (
+              <div className={style.item_about} key={index}>
+                <h3 className={style.title_about}>{item.value}</h3>
+                <p className={style.description_about}>{item.description}</p>
+              </div>
+            ))}
+          </div>
+          <div className={style.gallery}>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
     </main>
   );
 }

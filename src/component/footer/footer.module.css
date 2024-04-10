@@ -1,0 +1,12 @@
+.wrapper {
+    background-color: var(--color-primary-0);
+    padding: var(--spacing-3) 0;
+}
+
+.content {
+    display: flex;
+    max-width: var(--max-width);
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+}
