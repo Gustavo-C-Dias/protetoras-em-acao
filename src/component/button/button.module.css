@@ -1,0 +1,40 @@
+.button {
+  border: none;
+  cursor: pointer;
+  border-radius: var(--border-radius-circle);
+  font-family: '__Itim_31e513';
+  text-align: center;
+}
+
+.primary { 
+  background-color: var(--color-primary-100);
+  color: var(--color-neutral-0);
+  transition: var(--time-transition-2);
+}
+
+.primary:hover { 
+  background-color: var(--color-primary-200);
+  transform: scale(1.01);
+}
+
+.secondary { 
+  border: 2px solid var(--color-primary-100);
+  color: var(--color-primary-100);
+  transition: var(--time-transition-2);
+}
+
+.secondary:hover { 
+  border: 2px solid var(--color-primary-200);
+  color: var(--color-primary-200);
+  transform: scale(1.01);
+}
+
+.small {
+  padding: var(--spacing-1) var(--spacing-1-5);
+  font-size: 14px;
+}
+
+.medium {
+  padding: var(--spacing-1-5) var(--spacing-2);
+  font-size: 18px;
+}
