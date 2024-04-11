@@ -1,0 +1,18 @@
+.link {
+    cursor: pointer;
+    color: var(--color-neutral-200);
+    transition: var(--time-transition-2);
+}
+
+.link:hover{
+    color: var(--color-primary-200);
+    text-decoration: underline;
+}
+
+.small {
+    font-size: 16px;
+}
+  
+.medium {
+    font-size: 20px;
+}

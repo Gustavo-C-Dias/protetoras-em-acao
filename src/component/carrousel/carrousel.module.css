@@ -1,6 +1,15 @@
-.carrousel_wrapper {
+.wrapper {
     width: 1136px;
-    height: 440px;
-    background-color: var(--color-primary-0);
-    border-radius: var(--spacing-3);
+
+    @media screen and (max-width: 1200px){
+        width: 100%;
+    }
 }
+
+.banner_image {
+    border-radius: var(--spacing-2);
+    width: 100%;
+}
+
+
+
