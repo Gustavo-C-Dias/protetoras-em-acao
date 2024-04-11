@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from "@/component/header/header";
 import Carrousel from "@/component/carrousel/carrousel";
-import style from "../style/page.module.css"
+import style from "@/style/page.module.css"
 import Button from "@/component/button/button";
 import Footer from "@/component/footer/footer";
 import Card from "@/component/card/card";
@@ -70,19 +70,19 @@ export default function Home() {
 
       <Header />
 
-      <section className={style.section_carrousel}>
+      <section className={`${style.section_carrousel} ${style.breakpoint}`}>
         <Carrousel />
       </section>
 
-      <section className={style.section_adocao}>
-        <div className={style.content_adocao}>
-          <h2 className={style.title}>Adote um bichinho</h2>
+      <section className={`${style.section_adocao} ${style.breakpoint}`} id='section_adocao'>
+        <div className={`${style.content_adocao} ${style.breakpoint}`}>
+          <h2 className={`${style.title} ${style.title_neutral}`}>Adote um bichinho</h2>
           <div className={style.cards_adocao}>
             {cards.map((item, index) => (
               <Card key={index}>
                 <div>
                   <div className={style.card_image_adocao_content}>
-                    <img src={item.image} className={style.card_image_adocao}/>
+                    <img src={item.image} alt={item.image} className={style.card_image_adocao}/>
                   </div>
                   <div className={`${style.content_card} ${NunitoFont.className}`}>
                     <ContentAdocao name={item.nane} age={item.age} vaccine={item.vaccine} type={item.type}/>
@@ -95,9 +95,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={style.section_ajuda}>
-        <div className={style.content_ajuda}>
-          <h2 className={style.title_primary}>Realize uma ajuda</h2>
+      <section className={style.section_ajuda} id='section_ajuda'>
+        <div className={`${style.content_ajuda} ${style.breakpoint}`}>
+          <h2 className={`${style.title} ${style.title_primary}`}>Realize uma ajuda</h2>
           <p className={`${style.description} ${NunitoFont.className}`}>
             As contribuições podem ser feitas de várias formas relacionadas
             a campanhas específicas nos links abaixo, ou através de uma doação
@@ -111,9 +111,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={style.section_sobre}>
-        <div className={style.content_sobre}>
-          <h2 className={style.title}>Sobre nosso projeto</h2>
+      <section className={`${style.section_sobre} ${style.breakpoint}`} id='section_sobre'>
+        <div className={`${style.content_sobre} ${style.breakpoint}`}>
+          <h2 className={`${style.title} ${style.title_neutral}`}>Sobre nosso projeto</h2>
           <p className={`${style.description} ${NunitoFont.className}`}>
             As <b>Protetoras em Ação</b> dedica-se há mais de 5 anos à proteção,
             assistência e adoção de animais na região de Itapema, contribuindo para
