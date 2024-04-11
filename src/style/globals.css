@@ -9,14 +9,14 @@
   --color-neutral-100:#b5b5b5;
   --color-neutral-200: #2F2F2F;
 
-  --color-green-0:#E4FFF2; 
-  --color-green-100: #0C9D57;
+  --color-green-0:#ecfff6; 
+  --color-green-100: #008645;
 
-  --color-orange-0:#FFF1E4; 
-  --color-orange-100: #EC7000;
+  --color-orange-0:#fff6ed; 
+  --color-orange-100: #d36200;
 
-  --color-purple-0:#F4EEFF; 
-  --color-purple-100: #8D11DA;
+  --color-purple-0:#f5f0fe; 
+  --color-purple-100: #7a00c6;
 
   /* Breakpoints */
   --max-width: 1136px;
