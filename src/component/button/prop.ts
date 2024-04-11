@@ -4,4 +4,5 @@ export type buttonProps = {
     variant?: 'primary' | 'secondary'
     url?: string
     size?: 'small' | 'medium'
+    onClick?: () => void
 }

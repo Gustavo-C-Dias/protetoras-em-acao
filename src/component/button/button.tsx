@@ -7,6 +7,7 @@ export function Button({
   type,
   label,
   url,
+  onClick
 }: buttonProps) {
   const Tag = type || 'button'
   const href = type === 'a' ? (url || undefined) : undefined
@@ -18,7 +19,11 @@ export function Button({
         ${style[`${size}`]}
         ${style.button}
       `}
-      href={href}>{label}</Tag>
+      href={href}
+      onClick={onClick}
+      >
+        {label}
+    </Tag>
   );
 }
 
